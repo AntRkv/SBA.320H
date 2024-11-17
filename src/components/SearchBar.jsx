@@ -1,17 +1,18 @@
 import React, { useState } from "react";
+import "../App.css";
 
 const SearchBar = ({ onSearch }) => {
   const [city, setCity] = useState("");
 
   const handleSearch = () => {
-    if (city) {
-      onSearch(city);
+    if (city.trim()) {
+      onSearch(city.trim());
       setCity("");
     }
   };
 
   return (
-    <div>
+    <div className="search-container">
       <input
         type="text"
         value={city}
